@@ -1,5 +1,7 @@
 import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
-import React from 'react';
+import React, { useState } from "react";
+import * as actions from "../../middleware/action";
+import { connect } from 'react-redux'
 import Style from './Style';
 import Images from '../../assets/images/Images'
 import Colors from '../../assets/colors/Colors'
@@ -9,19 +11,20 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const SignIn = (props: any) => {
     const { navigation } = props;
-    const [email, setEmail] = React.useState();
-    const [password, setPassword] = React.useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
     const handleSignIn = () => {
+        props.changeLoginStatus(true)
         console.log(email, password)
     }
     const goBackNavigate = () => {
         return (
             <View style={Style.backIconContainer}>
-                <Text style={Style.backIconSize} 
-                onPress={() => {
-                    navigation.goBack();
-                }}>
+                <Text style={Style.backIconSize}
+                    onPress={() => {
+                        navigation.goBack();
+                    }}>
                     <AntDesign style={Style.backIcon} name={'left'} />;
                 </Text>
             </View>
@@ -66,4 +69,19 @@ const SignIn = (props: any) => {
     );
 };
 
-export default SignIn;
+
+
+
+
+
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeLoginStatus: (status) => {
+            return dispatch(actions.changeLoginStatus(status));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

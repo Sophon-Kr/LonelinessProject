@@ -1,19 +1,30 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
+import { connect } from 'react-redux'
 
 import LandingStack from './LandingStack';
-import LoginedStack from './LoggedinStack'
+import LoggedinStack from './LoggedinStack'
 
-const Navigation = () => {
+const Navigation = (props: any) => {
+
   return (
     <SafeAreaProvider>
-      <NavigationContainer >
-        <LandingStack />
-        {/* <LoginedStack /> */}
+      <NavigationContainer>
+        {!props.loginStatus ? <LandingStack /> : <LoggedinStack />}
+
+
       </NavigationContainer>
     </SafeAreaProvider>
   );
 };
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return {
+    loginStatus: state.reducer.loginStatus,
+  }
+}
+
+// const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, null)(Navigation)
