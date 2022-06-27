@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Style from './Style';
 import Images from '../../assets/images/Images'
 import Colors from '../../assets/colors/Colors'
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 
@@ -25,7 +25,7 @@ const SignIn = (props: any) => {
                     onPress={() => {
                         navigation.goBack();
                     }}>
-                    <AntDesign style={Style.backIcon} name={'left'} />;
+                    <FontAwesome5 style={Style.backIcon} name={'angle-left'} />;
                 </Text>
             </View>
         )

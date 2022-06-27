@@ -76,9 +76,9 @@ export default StyleSheet.create({
         color: Colors.primary,
     },
     backIcon: {
-        color: Colors.white, 
-        fontSize: 20,
-        fontFamily:Fonts.bold
+        color: Colors.white,
+        fontSize: 25,
+        fontFamily: Fonts.bold
     },
     backIconSize: {
         flexGrow: 1

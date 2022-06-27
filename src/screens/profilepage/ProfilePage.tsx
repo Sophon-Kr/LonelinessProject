@@ -3,15 +3,15 @@ import React from 'react';
 import Style from './Style';
 
 
-const Home = () => {
+const ProfilePage = () => {
    
     return (
         <View style={[Style.safeArea, Style.rootContainer]}>
             <View style={Style.textContainer}>
-                <Text style={Style.textLogo}>Home</Text>
+                <Text style={Style.textLogo}>ProfilePage</Text>
             </View>
         </View>
     );
 };
 
-export default Home;
+export default ProfilePage;
