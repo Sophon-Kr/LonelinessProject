@@ -53,6 +53,22 @@ export default StyleSheet.create({
         backgroundColor: Colors.primary,
         width: wp('100%'),
         padding: 0.3
+    },
+    badge: {
+        padding: 1,
+        minWidth: 25,
+        position: "absolute",
+        backgroundColor: "red",
+        color: Colors.white,
+        fontSize: 16,
+        fontFamily: Fonts.bold,
+        zIndex: 2,
+        borderRadius: 35,
+        textAlign: "center",
+    },
+    badgeContainer: {
+        marginLeft: 25,
+        marginBottom: 5
     }
 
 });

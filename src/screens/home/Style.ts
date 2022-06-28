@@ -12,14 +12,21 @@ export default StyleSheet.create({
     rootContainer: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: Colors.black
+        justifyContent: 'flex-start',
+        backgroundColor: Colors.black,
+        padding: wp('5%')
     },
     textLogo: {
-        fontSize: 30,
+        fontSize: 16,
         fontFamily: Fonts.bold,
-        color: Colors.primary
+        color: Colors.white,
+        marginTop: wp('5%'),
     },
+    // textContainer: {
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     justifyContent: 'flex-start',
+    //     alignItems: 'flex-start',
+    // }
 
 });

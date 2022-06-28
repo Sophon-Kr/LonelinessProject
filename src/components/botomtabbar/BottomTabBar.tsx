@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, LinearGradient } from 'react-native';
 import Style from '../../components/botomtabbar/Style'
 
 const BottomTabBar = ({ state, descriptors, navigation }) => {
-
+    const cartBadge = "99+";
     return (
         <View style={Style.rootBarContainer} >
             <View style={Style.seperate}></View>
@@ -52,6 +52,12 @@ const BottomTabBar = ({ state, descriptors, navigation }) => {
                             style={Style.warpBar}
 
                         >
+                            {(index == 2 && cartBadge != 0) ?
+                                <View style={Style.badgeContainer}>
+                                    <Text style={Style.badge}>{cartBadge}</Text>
+                                </View> : null}
+
+
                             <FontAwesome5
                                 style={isFocused ? [Style.iconSizeFocus, Style.buttonStyle] : [Style.iconSizeUnfocus, Style.buttonStyle]}
                                 name={
