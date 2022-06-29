@@ -17,5 +17,15 @@ export default {
         },
 
     },
+    images: {
+        home: {
+            chickenFillet: require('./chicken-fillet.png'),
+            chickenFilletFull: require('./pieces-chicken-fillet.jpg'),
+            kimchi: require('./chinese-cabbage-kimch.jpg'),
+            noodle: require('./spicy-red-soup-beef-noodle.jpg'),
+            strewBeef: require('./stew-beef.jpg'),
+            stirFryChicken: require('./stir-fry-chicken-zucchini.jpg'),
+        }
+    }
 
 };

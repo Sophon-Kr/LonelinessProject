@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import React from 'react';
 import Style from './Style';
 import Colors from '../../assets/colors/Colors'
@@ -8,16 +8,17 @@ import Promotion from '../../components/promotion/Promotion'
 import MenuList from '../../components/menulist/MenuList'
 
 const Home = () => {
-    // const 
     return (
         <View style={[Style.safeArea, Style.rootContainer]}>
-            <SearchField />
-            <Location />
-            <Promotion />
-            <View>
-                <Text style={Style.textLogo}>Top of Week</Text>
-            </View>
-            <MenuList />
+            <ScrollView showsVerticalScrollIndicator={false} >
+                <SearchField />
+                <Location />
+                <Promotion />
+                <View>
+                    <Text style={Style.textLogo}>Top of Week</Text>
+                </View>
+                <MenuList /></ScrollView>
+
         </View>
     );
 };

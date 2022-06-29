@@ -11,13 +11,16 @@ export default StyleSheet.create({
     rootContainer: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: Colors.black
+        justifyContent: 'flex-start',
+        // alignItems: 'center',
+        backgroundColor: Colors.black,
+        padding: wp('5%'),
+        paddingTop: wp('-5%')
     },
-    textLogo: {
-        fontSize: 30,
+    textTitle: {
+        marginTop: wp('5%'),
+        fontSize: 20,
         fontFamily: Fonts.bold,
-        color: Colors.primary
+        color: Colors.white
     },
 })

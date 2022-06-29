@@ -20,13 +20,8 @@ export default StyleSheet.create({
         fontSize: 16,
         fontFamily: Fonts.bold,
         color: Colors.white,
-        marginTop: wp('5%'),
+        marginTop: wp('4%'),
     },
-    // textContainer: {
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    //     justifyContent: 'flex-start',
-    //     alignItems: 'flex-start',
-    // }
+   
 
 });
