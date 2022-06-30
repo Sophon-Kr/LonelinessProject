@@ -4,7 +4,6 @@ import Colors from '../../assets/colors/Colors'
 import { widthPercentageToDP as wp } from '../../assets/sizes/Sizes';
 
 export default StyleSheet.create({
-
     safeArea: {
         flex: 1,
     },
@@ -12,7 +11,6 @@ export default StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        // alignItems: 'center',
         backgroundColor: Colors.black,
         padding: wp('5%'),
         paddingTop: wp('-5%')
@@ -22,5 +20,39 @@ export default StyleSheet.create({
         fontSize: 20,
         fontFamily: Fonts.bold,
         color: Colors.white
+    },
+    textOrder: {
+        fontSize: 20,
+        fontFamily: Fonts.bold,
+        color: Colors.white
+    },
+    sumTextOrder: {
+        fontSize: 16,
+        fontFamily: Fonts.regular,
+        color: Colors.white
+    },
+    totalTextOrder: {
+        fontSize: 20,
+        fontFamily: Fonts.bold,
+        color: Colors.white
+    },
+    orderButtonStyle: {
+        backgroundColor: Colors.primary,
+        padding: 10,
+        borderRadius: 10,
+        marginTop: wp('5%'),
+        alignItems: 'center',
+
+    },
+    outerbillDetailContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        marginTop: wp('5%')
+    },
+    innerbillDetailContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
 })

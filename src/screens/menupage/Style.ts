@@ -3,16 +3,17 @@ import Fonts from '../../assets/fonts/Fonts'
 import Colors from '../../assets/colors/Colors'
 import { widthPercentageToDP as wp } from '../../assets/sizes/Sizes';
 
-export default  StyleSheet.create({
+export default StyleSheet.create({
     safeArea: {
         flex: 1,
     },
     rootContainer: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: Colors.black
+        backgroundColor: Colors.black,
+        padding: wp('5%'),
     },
     textLogo: {
         fontSize: 30,

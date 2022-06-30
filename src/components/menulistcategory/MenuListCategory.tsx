@@ -1,9 +1,9 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList, Image, ScrollView } from 'react-native'
 import React from 'react'
 import Style from './Style'
 import Images from '../../assets/images/Images'
 
-const MenuList = () => {
+const MenuListCategory = () => {
     const DATA = [
         {
             id: 0,
@@ -35,10 +35,22 @@ const MenuList = () => {
             img: Images.images.home.strewBeef,
             price: "250฿"
         },
+        {
+            id: 5,
+            name: "Chicken Fillet",
+            img: Images.images.home.chickenFilletFull,
+            price: "150฿"
+        },
+
     ]
+
+
+
     const renderItem = ({ item }) => {
         return (
-            <View style={Style.listContainer}>
+            <View
+                style={Style.listContainer}
+            >
                 <View>
                     <Image source={item.img} style={Style.imageSize} />
                 </View>
@@ -47,19 +59,28 @@ const MenuList = () => {
                     <Text style={Style.textMenu}>{item.name}</Text>
                     <Text style={Style.textPrice}>{item.price}</Text>
                 </View>
-
             </View>
+
         )
     }
     return (
-        <FlatList
-            horizontal={true}
-            data={DATA}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-            showsHorizontalScrollIndicator={false}
-        />
+        <View style={Style.rootContainer}>
+            <FlatList
+                horizontal={false}
+                data={DATA}
+                renderItem={renderItem}
+                numColumns={2}
+                keyExtractor={(item) => item.id}
+                showsVerticalScrollIndicator={false}
+            // style={Style.outerContainer}
+
+            />
+        </View>
+
+
+
+
     )
 }
 
-export default MenuList
+export default MenuListCategory
