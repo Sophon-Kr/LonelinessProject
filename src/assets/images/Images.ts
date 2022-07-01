@@ -25,6 +25,9 @@ export default {
             noodle: require('./spicy-red-soup-beef-noodle.jpg'),
             strewBeef: require('./stew-beef.jpg'),
             stirFryChicken: require('./stir-fry-chicken-zucchini.jpg'),
+        },
+        profile: {
+            taylor: require('./taylor.jpg')
         }
     }
 

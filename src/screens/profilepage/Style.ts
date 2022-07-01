@@ -10,14 +10,27 @@ export default StyleSheet.create({
     rootContainer: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: Colors.black
+        backgroundColor: Colors.black,
+        padding: wp('5%')
     },
     textLogo: {
         fontSize: 30,
         fontFamily: Fonts.bold,
         color: Colors.primary
+    },
+    lougoutButton: {
+        backgroundColor: Colors.white,
+        marginTop: wp('5%'),
+        padding: 10,
+        alignItems: 'center',
+        borderRadius: 7
+
+    },
+    textButton: {
+        fontSize: 20,
+        fontFamily: Fonts.bold
     },
 
 })
