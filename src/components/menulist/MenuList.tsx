@@ -1,9 +1,16 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import { connect } from 'react-redux'
+import * as actions from "../../middleware/action";
 import React from 'react'
 import Style from './Style'
 import Images from '../../assets/images/Images'
 
-const MenuList = () => {
+
+const MenuList = (props: any) => {
+    const handleModal = () => {
+        // console.log("changeVisibleStatus : ", props.visibleModal)
+        props.changeVisibleStatus(true)
+    }
     const DATA = [
         {
             id: 0,
@@ -36,19 +43,24 @@ const MenuList = () => {
             price: "250฿"
         },
     ]
-    const renderItem = ({ item }) => {
+    const renderItem = ({ item }: any) => {
         return (
-            <View style={Style.listContainer}>
-                <View>
-                    <Image source={item.img} style={Style.imageSize} />
-                </View>
+            <TouchableOpacity
+                onPress={handleModal}
+            >
+                <View style={Style.listContainer}>
+                    <View>
+                        <Image source={item.img} style={Style.imageSize} />
+                    </View>
 
-                <View style={Style.textContainer}>
-                    <Text style={Style.textMenu}>{item.name}</Text>
-                    <Text style={Style.textPrice}>{item.price}</Text>
-                </View>
+                    <View style={Style.textContainer}>
+                        <Text style={Style.textMenu}>{item.name}</Text>
+                        <Text style={Style.textPrice}>{item.price}</Text>
+                    </View>
 
-            </View>
+                </View>
+            </TouchableOpacity>
+
         )
     }
     return (
@@ -62,4 +74,18 @@ const MenuList = () => {
     )
 }
 
-export default MenuList
+const mapStateToProps = (state: any) => {
+    return {
+        visibleModal: state.reducer.visibleModal,
+    }
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        changeVisibleStatus: (status: boolean) => {
+            return dispatch(actions.changeVisibleStatus(status));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuList)

@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 import RouteNames from "./RouteNames";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabBar from '../components/botomtabbar/BottomTabBar'
 import { View, Dimensions, } from 'react-native'
 import HeaderTop from '../components/headertop/HeaderTop'
-
 
 const Logined = (props: any) => {
     const Tab = createBottomTabNavigator();
@@ -55,7 +54,6 @@ const Logined = (props: any) => {
                     component={RouteNames.Profile.profile.component}
                 />
             </Tab.Navigator>
-
         </View >
 
     )

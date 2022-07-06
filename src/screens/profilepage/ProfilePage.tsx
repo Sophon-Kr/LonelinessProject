@@ -1,15 +1,20 @@
 import { View, ScrollView, Text, Image, TouchableOpacity, TextInput } from 'react-native';
-import React from 'react';
+import React, { useState } from "react";
+import * as actions from "../../middleware/action";
+import { connect } from 'react-redux'
 import Style from './Style';
 import ProfileImage from '../../components/profileimage/ProfileImage'
 import ProfileList from '../../components/profilelist/ProfileList'
 
-const ProfilePage = () => {
+const ProfilePage = (props: any) => {
+    const handleSignOut = () => {
+        props.changeLoginStatus(false)
+    }
     const logOutButton = () => {
         return (
             <TouchableOpacity
                 style={[Style.lougoutButton]}
-            // onPress={handleSignIn}
+                onPress={handleSignOut}
             >
                 <Text style={[Style.textButton]}>Sign Out</Text>
 
@@ -28,4 +33,14 @@ const ProfilePage = () => {
     );
 };
 
-export default ProfilePage;
+const mapStateToProps = (state: any) => ({})
+
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        changeLoginStatus: (status: boolean) => {
+            return dispatch(actions.changeLoginStatus(status));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)

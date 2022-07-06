@@ -1,10 +1,15 @@
 
 import axios from "axios";
 export const CHANGE_lOGIN_STATUS = "CHANGE_lOGIN_STATUS";
+export const CHANGE_VISIBLEMODAL_STATUS = "CHANGE_VISIBLEMODAL_STATUS";
 
 
 export const changeLoginStatus = (payload) => ({
   type: "CHANGE_lOGIN_STATUS",
+  payload,
+});
+export const changeVisibleStatus = (payload) => ({
+  type: "CHANGE_VISIBLEMODAL_STATUS",
   payload,
 });
 

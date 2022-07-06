@@ -20,7 +20,7 @@ const Navigation = (props: any) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state:any) => {
   return {
     loginStatus: state.reducer.loginStatus,
   }

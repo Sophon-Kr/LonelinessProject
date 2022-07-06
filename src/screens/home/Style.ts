@@ -22,6 +22,7 @@ export default StyleSheet.create({
         color: Colors.white,
         marginTop: wp('4%'),
     },
-   
+
+    
 
 });
